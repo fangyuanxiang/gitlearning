@@ -349,16 +349,16 @@ Git简单介绍
 
   * 添加标签
 
-		shell> git tag <name> 
-		shell> git tag <name> [<commit>]
+			shell> git tag <name> 
+			shell> git tag <name> [<commit>]
 
   * 删除标签
 
-		shell> git tag -d <name>
+			shell> git tag -d <name>
 
   * 其它标签
 
-		shell> man git-tag
+			shell> man git-tag
 
 * 二级模块
 
@@ -368,13 +368,15 @@ Git简单介绍
 
   * subversion
 
-		shell> man git-svn
+			shell> man git-svn
+
   * cvs
 
-		shell> man git-cvsimport
-		shell> man git-cvsexportcommit
-		shell> man git-cvsserver
+			shell> man git-cvsimport
+			shell> man git-cvsexportcommit
+			shell> man git-cvsserver
 
   * perforce
 
-		shell> man git-p4
+			shell> man git-p4
+
