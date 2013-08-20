@@ -3,7 +3,7 @@ Git简单介绍
 
 ### 什么是它
 
-* Linus Torvalds: the stupid content tracker  
+* Linus Torvalds: the stupid content tracker
 
 ### 主要特点
 
@@ -52,6 +52,8 @@ Git简单介绍
 		shell> git remote add origin /path/to/repository
 		shell> git push -u origin master
 
+  **提示**：`-u`即设定upstream，设定过后，不需要再重新设定。
+
 * 克隆项目
 
 		shell> git clone /path/to/origin
@@ -81,7 +83,7 @@ Git简单介绍
 		或者
 		shell> git commit -a -m "message"
 
-	**提示**: 提交时带上-v参数，有惊喜哦  
+	**提示**: 提交时带上-v参数，有惊喜哦
 
 ### 查看提交
 
@@ -105,7 +107,7 @@ Git简单介绍
 
 		shell> git log -p ...
 		shell> git blame ...
-	
+
 	**提示**: `git log -p`侧重文件演化过程，而`git blame`则注重目前文件中的每一行是谁写的。
 
 ### 反悔提交
@@ -134,9 +136,8 @@ Git简单介绍
 
 		shell> git revert ...
 
-
 * 反悔
-  
+
   **前提**: 没有运行git gc
 
 		shell> git fsck --lost-found
@@ -146,7 +147,7 @@ Git简单介绍
 
 * `$GIT_DIR/.gitignore`
   * 一行一个配置
-  * 支持通配符，如* (`man 3 fnmatch`)
+  * 支持通配符，如`*` (`man 3 fnmatch`)
   * 以`#`开头，表示注释
   * 以`!`开头，表示不要忽略
   * 以`/`结尾，表示忽略目录
@@ -169,7 +170,7 @@ Git简单介绍
 
 		shell> git update-index --no-assume-unchanged ...
 
-  要找出这些文件，可以使用以下命令: 
+  要找出这些文件，可以使用以下命令:
 
 		shell> git ls-files -v
 
@@ -227,7 +228,7 @@ Git简单介绍
 
 * 解决冲突
 
-  如果无法自动合并，会有如下代码:   
+  如果无法自动合并，会有如下代码:
 
 		<<<<<<< 自己的
 		+++++
@@ -239,7 +240,7 @@ Git简单介绍
 
 		shell> git config merge.conflictstyle diff3
 
-  将会显示为以下形式: 
+  将会显示为以下形式:
 
 		<<<<<<< 自己的
 		+++++
@@ -256,7 +257,7 @@ Git简单介绍
 * 新建分支
 
 		shell> git checkout -b <branch> ...
-  
+
   **说明**: 可以是tag, SHA1, branch, ...
 
 * 删除分支
@@ -265,6 +266,10 @@ Git简单介绍
 		shell> git branch -D <branch>
 
   大D删除，不管当前的merge状态，默认的小d删除，如果有没有merge的文件，将不能提交。
+
+* 设定上游
+
+		shell> git branch --set-upstream <repository>
 
 * 切换分支
 
@@ -282,7 +287,7 @@ Git简单介绍
 
 * 清除分支
 
-  有时，远程分支已经不存在的，但是本地分支还在。是的，不会自动清空: 
+  有时，远程分支已经不存在的，但是本地分支还在。是的，不会自动清空:
 
 		shell> git remote prune <upstream>
 
@@ -310,7 +315,7 @@ Git简单介绍
 		+-----------+                |  git commit -a
 		|  staging  |                |
 		+-----------+                |  git diff HEAD
-		      |                      | 
+		      |                      |
 		      |  git commit          |
 		      |  git diff --cached   |
 		      v                      |
@@ -329,10 +334,10 @@ Git简单介绍
 
   钩子，人称`hooks`。默认情况下，在`$GIT_DIR/hooks`下有一些钩子示例，把.sample去除可以直接使用。  
   比如我们要在提交之前，先自我较验代码，如果不通过就直接失败，则可以定义`$GIT_DIR/hooks/pre-commit`。  
-  更多用法，请直接: 
+  更多用法，请直接:
 
 		shell> man githooks
-  
+
 ### 如何学习
 
 * `man git`，查看手册
@@ -349,7 +354,7 @@ Git简单介绍
 
   * 添加标签
 
-			shell> git tag <name> 
+			shell> git tag <name>
 			shell> git tag <name> [<commit>]
 
   * 删除标签
