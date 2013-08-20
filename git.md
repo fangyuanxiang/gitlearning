@@ -10,7 +10,8 @@ Git简单介绍
 * [小而快](http://git-scm.com/about/small-and-fast)
   * 为[Linux](https://git.kernel.org)而生
   * [Android](https://android.googlesource.com)使用
-  * [github](https://github.com)专业git托管
+  * [github](https://github.com)专业git托管，公共项目免费
+  * [bitbucket](https://bitbucket.org)同样著名，而且提供免费私人项目
 
 * [分布式](http://git-scm.com/about/distributed)
   * 不需要中心服务器(停电？宕机？没影响)
@@ -325,7 +326,7 @@ Git简单介绍
 
 ### 生成快照
 
-		shell> git archive --prefix=project/ HEAD -o project.zip
+	shell> git archive --prefix=project/ HEAD -o project.zip
 
   这个生成快照，不带`.git`任何信息，可以用来发布版本。  
   当然，格式方式，支持`zip`和`tar`，使用`--format`指定。
@@ -336,7 +337,7 @@ Git简单介绍
   比如我们要在提交之前，先自我较验代码，如果不通过就直接失败，则可以定义`$GIT_DIR/hooks/pre-commit`。  
   更多用法，请直接:
 
-		shell> man githooks
+	shell> man githooks
 
 ### 如何学习
 
