@@ -146,7 +146,7 @@ Git简单介绍
 
 ### 忽略提交
 
-* `$GIT_DIR/.gitignore`
+* `.gitignore`
   * 一行一个配置
   * 支持通配符，如`*` (`man 3 fnmatch`)
   * 以`#`开头，表示注释
